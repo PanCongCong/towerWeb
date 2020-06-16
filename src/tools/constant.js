@@ -1,0 +1,1 @@
+export const BASE_URL = 'http://www.ynlk-lot.com:7070/';

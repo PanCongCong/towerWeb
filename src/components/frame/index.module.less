@@ -1,0 +1,69 @@
+.container {
+    // background: url(./../../imgs/bg.png) no-repeat center;
+
+    :global(.ant-layout-content) {
+        position: relative;
+    }
+}
+
+.header {
+    text-align         : center;
+    position           : relative;
+    color              : #fff;
+    font-family        : MicrosoftYaHei-Bold, MicrosoftYaHei;
+    height             : auto;
+    background         : url(./../../imgs/header.png) no-repeat;
+    background-position: center -10px;
+
+
+    .headerCenter {
+        font-size: 30px;
+        position : relative;
+        top      : 10px;
+    }
+
+    .headerLeft {
+        position   : absolute;
+        left       : 30px;
+        top        : 0px;
+        font-weight: bold;
+        font-size  : 20px;
+        cursor     : pointer;
+    }
+
+    .headerMenu {
+        position: absolute;
+        right   : 0px;
+        top     : 0px;
+
+        a {
+            color       : #fff;
+            font-size   : 16px;
+            font-family : MicrosoftYaHei;
+            margin-right: 37px;
+
+            &:global(.active) {
+                color: #00FAFF;
+            }
+        }
+    }
+    .timeWrap {
+        display        : flex;
+        flex-direction : row;
+        line-height    : 16px;
+        justify-content: flex-end;
+        align-items    : center;
+        height         : 32px;
+    
+        .time {
+            font-size   : 26px;
+            margin-right: 12px;
+        }
+    
+        .date {
+            text-align: left;
+            font-size : 12px;
+        }
+    }
+}
+

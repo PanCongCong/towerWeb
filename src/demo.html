@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Find(target, array) {
+            // write code here
+            if (array.length == 0) return false;
+            let rows = array.length;
+            let columns = array[0].length;
+            let row = 0, column = columns - 1;
+            while (row < rows && column >= 0) {
+                if (array[row][column] === target) return true;
+                else if (array[row][column] > target) --column;
+                else ++row;
+            }
+            return false;
+        }
+        console.log(Find(7, [[1, 2, 8, 9], [2, 4, 9, 12], [4, 7, 10, 13], [6, 8, 11, 15]]));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,434 @@
+.container {
+    background: url(../../imgs/bg.png) no-repeat center;
+    background-size: contain;
+    position      : absolute;
+    left          : 0;
+    top           : 0;
+    width         : 100%;
+    height        : 100%;
+    display       : flex;
+    flex-direction: row;
+    padding       : 0 20px;
+
+
+    .infoWrap {
+        width         : 350px;
+        height        : 100%;
+        display       : flex;
+        flex-direction: column;
+        position      : relative;
+        ;
+
+        .card {
+            flex          : 1;
+            display       : flex;
+            flex-direction: column;
+            position      : relative;
+
+            .cardTitle {
+                color      : #fff;
+                background : linear-gradient(90deg, rgba(0, 250, 255, 0.47) 0%, rgba(0, 250, 255, 0) 100%);
+                height     : 24px;
+                line-height: 16px;
+                padding    : 4px 10px;
+
+                .cardBtnGroup {
+                    float: right;
+
+                    span {
+                        display   : inline-block;
+                        padding   : 0 10px;
+                        background: #040A19;
+                        font-size : 12px;
+                        cursor    : pointer;
+
+                        &.active {
+                            background-color: #027C86;
+                        }
+                    }
+                }
+            }
+
+            .cardContent {
+                flex       : 1;
+                display    : flex;
+                align-items: center;
+            }
+
+            .towerInfo {
+                .row {
+                    margin         : 10px 0;
+                    font-size      : 14px;
+                    display        : flex;
+                    flex-direction : row;
+                    justify-content: space-between;
+                }
+            }
+
+            .sumInfo {
+                color: #fff;
+                flex : 1;
+
+                .sumInfoItem {
+                    margin-bottom  : 20px;
+                    padding: 0 20px;
+                    display        : flex;
+                    flex-direction : row;
+                    justify-content: space-between;
+
+                    .sumInfoSuccessText {
+                        color: #279BF8;
+                    }
+
+                    .sumInfoSuccess {
+                        &::before {
+                            content         : '';
+                            display         : inline-block;
+                            width           : 12px;
+                            height          : 12px;
+                            background-color: #279BF8;
+                            margin-right    : 10px;
+                        }
+                    }
+
+                    .sumInfoErrorText {
+                        color: #C0429B;
+                    }
+
+                    .sumInfoError {
+                        &::before {
+                            content         : '';
+                            display         : inline-block;
+                            width           : 12px;
+                            height          : 12px;
+                            background-color: #C0429B;
+                            margin-right    : 10px;
+                        }
+                    }
+                }
+            }
+
+            &.planTime {
+                .info {
+                    font-size: 12px;
+                    margin   : 4px 0;
+                }
+
+                .sum {
+                    color: #00FAFF;
+
+                    .num {
+                        display     : inline-block;
+                        font-size   : 30px;
+                        margin-right: 10px;
+                    }
+                }
+
+                .row {
+                    display: inline-block;
+                    width  : 40%;
+
+                    &:nth-child(odd) {
+                        width: 60%;
+                    }
+
+                    display           : inline-flex;
+                    flex-direction    : row;
+                    // justify-content: space-between;
+                    // padding-right  : 30px;
+
+                    .color1 {
+                        color: #9252E9;
+                    }
+
+                    .color2 {
+                        color: #FBB318;
+                    }
+
+                    .color3 {
+                        color: #4965E5;
+                    }
+                }
+
+                .progress {
+                    display       : flex;
+                    flex-direction: row;
+                    margin        : 10px 0;
+
+                    :global(.ant-progress-line) {
+                        flex: 1
+                    }
+
+                    &:nth-child(1) {
+                        .num {
+                            color: #9252E9;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        .num {
+                            color: #FBB318;
+                        }
+                    }
+                }
+            }
+
+
+
+            .depWrap {
+                display       : flex;
+                flex-direction: row;
+
+                .depChart {
+                    flex  : 1;
+                    height: 100%;
+                }
+
+                .depInfo {
+                    width          : 150px;
+                    padding-top    : 10px;
+                    padding-left   : 10px;
+                    counter-reset  : index 0;
+                    background     : url(./../../imgs/bi-border.png) no-repeat center;
+                    background-size: 99%;
+                    min-height     : 138px;
+
+                    .depItem:nth-child(1) {
+                        &::before {
+                            color: #FF3839;
+                        }
+                    }
+
+                    .depItem:nth-child(2) {
+                        &::before {
+                            color: #F39341;
+                        }
+                    }
+
+                    .depItem:nth-child(3) {
+                        &::before {
+                            color: #4965E5;
+                        }
+                    }
+
+                    .depItem {
+                        margin-bottom    : 5px;
+                        counter-increment: index;
+                        position         : relative;
+                        padding-left     : 20px;
+
+                        &::before {
+                            content  : counter(index);
+                            font-size: 12px;
+                            position : absolute;
+                            left     : 0;
+                            top      : 0;
+                        }
+
+                        h5 {
+                            color    : rgba(255, 255, 255, 0.6);
+                            font-size: 12px;
+                            margin   : 0;
+                        }
+
+                        p {
+                            margin   : 0;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .title {
+            height       : 50px;
+            color        : #00FAFF;
+            font-size    : 26px;
+            font-weight  : 600;
+            line-height  : 50px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 250, 255, 0.45);
+
+            &::before {
+                content         : '';
+                display         : inline-block;
+                height          : 20px;
+                width           : 4px;
+                margin-right    : 10px;
+                background-color: #00FAFF;
+            }
+
+            small {
+                font-size: 12px;
+                float    : right;
+                color    : rgba(255, 255, 255, 0.65);
+            }
+        }
+
+
+    }
+
+    .centerWrap {
+        flex  : 1;
+        height: 100%;
+
+        .map {
+            display       : flex;
+            flex-direction: column;
+            padding       : 10px;
+            height        : 100%;
+
+            .topBar {
+                display        : flex;
+                flex-direction : row;
+                align-items    : center;
+                justify-content: space-between;
+                color          : rgba(255, 255, 255, 0.65);
+                border         : 1px solid rgba(0, 250, 255, 0.44);
+                padding        : 10px;
+
+                .selectGroup {
+                    :global(.ant-select) {
+                        margin: 0 10px;
+                        min-width: 120px;
+                    }
+                }
+            }
+
+            .content {
+                margin-top: 10px;
+                flex      : 1;
+                border    : 1px solid rgba(0, 250, 255, 0.44);
+
+                .chart {
+                    margin: 10px;
+                    height: 100%;
+                }
+            }
+        }
+
+        .towerMap {
+            display       : flex;
+            flex-direction: column;
+
+            .wrap {
+                flex        : 1;
+                padding-left: 20px;
+                padding-top : 20px;
+
+                .canvas {
+                    height: 487.5px;
+                    width : 600px;
+                }
+            }
+
+            .info {
+                .row {
+                    margin         : 10px 0;
+                    display        : flex;
+                    flex-direction : row;
+                    justify-content: space-around;
+
+                    .infoCard {
+                        background     : url(./../../imgs/tower-info.png) no-repeat center;
+                        width          : 124px;
+                        height         : 91px;
+                        display        : flex;
+                        flex-direction : column;
+                        align-items    : center;
+                        justify-content: center;
+
+                        .tit {
+                            color    : rgba(255, 255, 255, 0.85);
+                            font-size: 14px;
+
+                            i {
+                                color       : #00FAFF;
+                                margin-right: 10px;
+                            }
+                        }
+
+                        .num {
+                            color      : #00FAFF;
+                            font-size  : 20px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.model {
+    :global(.ant-modal) {
+        background: linear-gradient(180deg, rgba(0, 102, 111, 0.9) 0%, rgba(3, 22, 36, 0.9) 100%);
+        box-shadow: 0px 19px 11px 0px rgba(0, 0, 0, 0.5);
+
+    }
+
+    :global(.ant-modal-content) {
+        background-color: transparent;
+    }
+
+    :global(.ant-modal-body) {
+        color  : #fff;
+        padding: 0;
+    }
+
+    .modelTop {
+        padding      : 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        font-size    : 18px;
+
+        p {
+            margin   : 0;
+            font-size: 12px;
+        }
+    }
+
+    .modelContent {
+        padding      : 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        font-size    : 16px;
+
+        .proRow {
+            display       : flex;
+            flex-direction: row;
+            margin        : 10px 0;
+
+            &:nth-child(1) {
+                .num {
+                    color: #FBB318;
+                }
+            }
+
+            &:nth-child(2) {
+                .num {
+                    color: #4965E5;
+                }
+            }
+
+            &:nth-child(3) {
+                .num {
+                    color: #2AD18F;
+                }
+            }
+
+            .num {
+                margin-left : 10px;
+                margin-right: 20px;
+
+            }
+
+            :global(.ant-progress) {
+                flex: 1;
+            }
+        }
+    }
+
+    .modelFotter {
+        padding: 20px;
+    }
+
+}
